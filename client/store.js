@@ -1,11 +1,13 @@
-// import { configureStore } from '@reduxjs/toolkit';
-// import { composeWithDevTools } from 'redux-devtools-extension';
-// import reducers from './reducers/index';
+import { configureStore } from '@reduxjs/toolkit';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import recipeSlice from './reducers/index';
 
-// // we are adding composeWithDevTools here to get easy access to the Redux dev tools
-// const store = configureStore(
-//   reducers,
-//   composeWithDevTools()
-// );
+// we are adding composeWithDevTools here to get easy access to the Redux dev tools
 
-// export default store;
+const store = configureStore({
+  devTools: true,
+  reducer: {
+    markets: recipeSlice
+  },
+});
+export default store;

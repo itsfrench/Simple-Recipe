@@ -12,9 +12,11 @@ module.exports = {
     static: {
       publicPath: '/',
       directory: path.resolve(__dirname, 'dist'),
+      
     },
     proxy: {
-      '/assets': 'http://localhost:3000/'
+      '/assets': 'http://localhost:3000/',
+      secure: false
     }
   },
   module: {
@@ -32,12 +34,12 @@ module.exports = {
       {
         test: /\.s?css/,
         exclude: '/node_modules/',
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: ['style-loader', 'css-loader']
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
-        use: ['url-loader'],
+        type: 'asset',
+        // use: ['url-loader'],
       },
     ]
   },
