@@ -9,5 +9,8 @@ import store from './store.js';
 
 const root = createRoot(document.getElementById('top'));
 root.render(
-    <App />
+    <Provider store={store}>
+        <App />
+    </Provider>
+    
 );

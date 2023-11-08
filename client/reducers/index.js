@@ -12,15 +12,17 @@ export const recipeSlice = createSlice({
       //to add a new recipe
       const newRecipe = {
         recipetId: state.lastRecipeId + 1,
-        [action.payload.recipeTitle]: action.payload.recipeTitle,
+        title: action.payload.title,
+        measurement: action.payload.measurement,
         ingredients: action.payload.ingredients,
-        recipeinstructions: action.payload.recipeInstructions,
+        instructions: action.payload.instructions,
       };
 
       state.lastRecipeId += 1;
       state.totalRecipes += 1;
 
-      state.recipeList.push(newRecipe);
+      state.recipeList.newRecipe = newRecipe;
+      console.log(state.recipeList)
     },
     addIngredient: (state, action) => {
       recipeList[action.payload.recipeTitle]

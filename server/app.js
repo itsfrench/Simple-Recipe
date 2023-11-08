@@ -19,14 +19,6 @@ app.get('/', (req, res) => res.sendFile(index) )
 const images = path.join(__dirname, '../client/assets');
 app.use('/assets', express.static(images));
 
-// app.get('/start-new-recipe', (res, req) => {
-//   res.sendFile(path.resolve(__dirname, '../client/containers/CreateNewRecipe.jsx'));
-// });
-
-
-// app.use('/start', (res, req) => {
-
-// })
 
 //global error handler function 
 const errorHandler = (err, req, res, next) => {

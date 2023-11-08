@@ -15,6 +15,9 @@ const MainContainer = () => {
         <Link to='/start-new-recipe'>
         <button>Create Recipe</button>
         </Link>
+        <Link to='/view-recipes'>
+        <button>View All Recipes</button>
+        </Link>
       <RecipeContainer /> 
     </div>
   );
