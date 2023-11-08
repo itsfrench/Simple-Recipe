@@ -1,6 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, current } from '@reduxjs/toolkit';
 
 export const recipeSlice = createSlice({
+
+  //query here, if empty do the rest of the code below:
   name: 'recipes',
   initialState: {
     totalRecipes: 0,
@@ -22,7 +24,7 @@ export const recipeSlice = createSlice({
       state.totalRecipes += 1;
 
       state.recipeList.newRecipe = newRecipe;
-      console.log(state.recipeList)
+      console.log('this is the state:', current(state))
     },
     addIngredient: (state, action) => {
       recipeList[action.payload.recipeTitle]

@@ -11,8 +11,8 @@ const RecipeCreator = () => {
   
     const formTitle = document.querySelector('#form-title');
     formData.title = formTitle.value;
-    const formMeasurment = document.querySelector('#form-measurment');
-    formData.measurment = formMeasurment.value;
+    const formMeasurement = document.querySelector('#form-measurement');
+    formData.measurement = formMeasurement.value;
     const formIngredients = document.querySelector('#form-ingredients');
     formData.ingredients = formIngredients.value;
     const formInstructions = document.querySelector('#form-instructions');
@@ -24,7 +24,7 @@ const RecipeCreator = () => {
     console.log(formData)
     dispatch(addRecipe(formData));
     formTitle.value = ''; 
-    formMeasurment.value = ''; 
+    formMeasurement.value = ''; 
     formIngredients.value = ''; 
     formInstructions.value = ''; 
   }
@@ -34,12 +34,12 @@ const RecipeCreator = () => {
       <div id='recipe-form'>
         <label>Recipe Title:</label>
         <input id='form-title' type='text' name='recipe-title' ></input>
-        <label>Measurment Type:</label>
-        <input type='datalist' list='measurment' />
-          <datalist id='form-measurment'>
+        <label>Measurement Type:</label>
+        {/* <input type='datalist' list='measurement' /> */}
+          <select id='form-measurement'>
             <option value="Metric">Metric</option>
             <option value="US Standard">US Standard</option>
-          </datalist>  
+          </select>  
         <label> Recipe Ingredients:</label>
         <input id='form-ingredients' type='text' name='recipe-title' ></input>
         <label>Recipe Instructions:</label>

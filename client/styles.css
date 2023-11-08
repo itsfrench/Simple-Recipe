@@ -5,7 +5,9 @@
   align-content: center;
   background-color: transparent; 
 }
-
+a {
+  color: transparent;
+}
 body {
   background-color: #0F332D;
 }
@@ -13,8 +15,10 @@ body {
 h1{
   display: flex;
   justify-content: center;
-  font-size: 5vw;
+  font-size: 7vw;
   color: beige;
+  font-family: 'DM Serif Display', serif;
+  margin-bottom: 0;
 }
 
 #sando {
@@ -31,6 +35,7 @@ h1{
 h3 {
   display: flex;
   justify-content: center;
+  font-family: 'Inter', sans-serif;
   font-size: 3vw;
   color: beige;
 }
@@ -45,11 +50,13 @@ button {
   width: 20vw;
   height: 8vw;
   font-size: 2.5vw;
+  font-family: 'Inter', sans-serif;
+  margin-top: 3vw;
   margin-right: 1vw;
   margin-left: 1vw;
   justify-content: center;
   border-radius: 5vw;
-  color: antiquewhite;
+  color: #F5F5DB;
   background-color: rgb(9, 132, 105);
 } 
 
@@ -67,6 +74,7 @@ button {
   align-items: center;
   width: 30vw;
   font-size: 2vw;
+  font-family: 'Inter', sans-serif;
   margin-top: 2vw;
   margin-bottom: 2vw;
   justify-content: center;
@@ -85,6 +93,7 @@ label {
   justify-content: center;
   margin-top: 1vw;
   font-size: 2.5vw;
+  font-family: 'Inter', sans-serif;
   color: beige;
 }
 input {
@@ -93,9 +102,26 @@ input {
   flex-direction: column;
   width: 40vw;
   height: 3.5vw;
+  background-color: #F5F5DB;
+  font-size: 2vw;
+  text-align: center;
 } 
 #form-instructions {
   margin-top: 1vw;
   width: 40vw;
-  height: 30vw;
+  height: 20vw;
+  text-align: top;
+}
+#form-measurement {
+  margin-top: 1vw;
+  width: 40vw;
+  height: 3.5vw;
+  text-align: center;
+  background: #F5F5DB;
+  font-size: 2vw;
+  font-family: 'Inter', sans-serif;
+}
+option {
+  font-size: 1.5vw;
+  font-family: 'Inter', sans-serif;
 }
