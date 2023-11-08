@@ -1,17 +1,20 @@
 import React from 'react';
 import RecipeContainer from './RecipeContainer.jsx';
-import RecipeCreator from './RecipeCreator.jsx';
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 
 /* <RecipeCreator /> */
 
 const MainContainer = () => {
-  const createNewRecipe = () => {
-    fetch('/start-new-recipe')
+  const createNewRecipe = async () => {
+    const res = await fetch('http://localhost:3000/start-new-recipe');
+    const data = await res.json();
   }
   return(
     <div id='main-container'>
-      <button onClick={createNewRecipe}>Create Recipe</button>
+        <Link to='/start-new-recipe'>
+        <button>Create Recipe</button>
+        </Link>
       <RecipeContainer /> 
     </div>
   );
