@@ -9,7 +9,8 @@ controller.createRecipe = async (req, res, next) => {
 controller.updateState = async (req, res, next) => {
 
   try {
-    const dbResponse = await Recipe.find();
+    const dbResponse = await Recipe.find({});
+    //grab 
     const count = await Recipe.countDocuments();
     res.locals.data = dbResponse;
     res.locals.count = count;

@@ -8,7 +8,7 @@ const cors = require("cors")
 
 const app = express();
 const PORT = 3000;
-const mongoURI = 'mongodb+srv://cluster0.efre890.mongodb.net/';
+const mongoURI = 'mongodb+srv://clynnfrench:3TVnc7YEybeWfMNt@cluster0.efre890.mongodb.net/?retryWrites=true&w=majority';
 mongoose.connect(mongoURI);
 
 app.use(express.json());
