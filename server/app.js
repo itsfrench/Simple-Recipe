@@ -25,7 +25,6 @@ app.get('/', (req, res) => res.sendFile(index) )
 //handler to update state
 app.get('/update-state', controller.updateState, (req, res) => {
   const data = [res.locals.count, res.locals.data];
-  console.log('here is the data from the DB!', data);
   res.status(200).json(data).end();
 });
 

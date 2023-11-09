@@ -7,7 +7,7 @@ import recipeSlice from './reducers/index';
 const store = configureStore({
   devTools: true,
   reducer: {
-    markets: recipeSlice
+    recipes: recipeSlice
   },
 });
 export default store;

@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 #header {
   display: flex;
   flex-direction: column;
@@ -35,8 +40,17 @@ h1{
 h3 {
   display: flex;
   justify-content: center;
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Serif Display', serif;
+  margin: 2vw;
   font-size: 3vw;
+  color: beige;
+}
+h2 {
+  display: flex;
+  margin: 1vw;
+  justify-content: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.5vw;
   color: beige;
 }
 
@@ -47,8 +61,8 @@ h3 {
 }
 
 button {
-  width: 20vw;
-  height: 8vw;
+  width: 22vw;
+  height: 7vw;
   font-size: 2.5vw;
   font-family: 'Inter', sans-serif;
   margin-top: 3vw;
@@ -137,3 +151,49 @@ option {
   font-size: 1.5vw;
   font-family: 'Inter', sans-serif;
 }
+
+#recipe-container {
+  background-color:transparent;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+#recipe-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5db27;
+  margin: 2vw;
+  border-radius: 10vw;
+  font-family: 'Inter', sans-serif;
+  width: 60vw;
+  height: fit-content;
+}
+p {
+  display: flex;
+  justify-content: center;
+  width: 48vw;
+  margin-bottom: 1vw;
+  align-content: center;
+  font-size: 1.75vw;
+  font-family: 'Inter', sans-serif;
+
+}
+#text-instructions {
+  display: flex;
+  justify-content: center;
+  width: 48vw;
+  margin-bottom: 3vw;
+  align-content: center;
+  font-size: 1.75vw;
+  font-family: 'Inter', sans-serif;
+}
+#recipe-buttons {
+  margin-bottom: 1vw;
+  margin-top: 1vw;
+  width: 18vw;
+  height: 5vw;
+  font-size: 2vw;
+} 

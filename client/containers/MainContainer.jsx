@@ -20,7 +20,6 @@ const MainContainer = () => {
         <Link to='/view-recipes'>
         <button>View Recipes</button>
         </Link>
-      <RecipeContainer /> 
     </div>
   );
 }

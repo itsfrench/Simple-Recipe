@@ -3,7 +3,6 @@ const Recipe = require('./recipeModel.js')
 const controller = {};
 
 controller.updateState = async (req, res, next) => {
-  console.log('made it here!')
   try {
     const dbResponse = await Recipe.find();
     //grab 

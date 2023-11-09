@@ -9,9 +9,6 @@ import { updateAllState } from '../reducers/index.js';
 const RecipeContainer = () => {
   //populate some stuff from react here 
   //populate recipes in this container 
- 
-  
-  // <RecipeCards />
   const dispatch = useDispatch();
 
   useEffect( () => {
@@ -38,7 +35,9 @@ const RecipeContainer = () => {
   }, []);
   
   return (
-    <div></div>
+    <div id='recipe-container'>
+      <RecipeCards />
+    </div>
   )
 }
 

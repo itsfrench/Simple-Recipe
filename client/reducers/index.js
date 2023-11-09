@@ -27,13 +27,13 @@ export const recipeSlice = createSlice({
     updateAllState: (state, action) => {
       const count = action.payload.count;
       const dbRecipeList = action.payload.array;
-      let obj = {};
-       for (let i = 0; i < dbRecipeList; i++){
-        console.log(dbRecipeList[i])
-        obj[i] = array[i];
-      }
+      // let obj = {};
+      //  for (let i = 0; i < dbRecipeList; i++){
+      //   console.log(dbRecipeList[i])
+      //   obj[i] = array[i];
+      // }
       // console.log('Here are the objects: ', dbRecipeList);
-      state.lastRecipeId += count;
+      state.lastRecipeId = count;
       state.recipeList = dbRecipeList;
       console.log('this is the state:', current(state));
     },
