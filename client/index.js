@@ -5,9 +5,8 @@ import App from './App.jsx';
 import store from './store.js';
 
 
-//store={store}
-
 const root = createRoot(document.getElementById('top'));
+
 root.render(
     <Provider store={store}>
         <App />

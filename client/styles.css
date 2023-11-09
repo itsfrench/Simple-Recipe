@@ -64,9 +64,8 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  
-  
 }  
+
 #recipe-form {
   display: flex;
   flex-direction: column;
@@ -120,6 +119,12 @@ input {
   background: #F5F5DB;
   font-size: 2vw;
   font-family: 'Inter', sans-serif;
+}
+#add-ingredients {
+  width: 15vw;
+  height: 3vw;
+  font-size: 1.25vw;
+  margin-top: 1vw;
 }
 option {
   font-size: 1.5vw;

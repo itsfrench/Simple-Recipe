@@ -8,4 +8,4 @@ const recipeSchema = new Schema({
   instructions: {type: Array, required: true}
 });
 
-module.exports = mongoose.model('Recipe', userSchema);
+module.exports = mongoose.model('Recipe', recipeSchema);
