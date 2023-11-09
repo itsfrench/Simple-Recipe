@@ -53,16 +53,12 @@ const RecipeCreator = () => {
     dispatch(addRecipe(formData));
     //here is where I need to make a POST reques to my DB
 
-    //subscribe to state to get the id 
-    // const recipeId = useSelector(state => state.lastRecipeId);
-    // formData.id = recipeId - 1;
     submitRecipe(formData);
 
     //set all of the form fields to empty
     const firstIng = document.querySelector('.first-ingredient');
     formTitle.value = ''; 
     setIngredientsArray([]);
-    // formIngredients.value = ''; 
     firstIng.value = '';
     formInstructions.value = ''; 
   }

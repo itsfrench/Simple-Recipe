@@ -2,14 +2,10 @@ const Recipe = require('./recipeModel.js')
 
 const controller = {};
 
-controller.createRecipe = async (req, res, next) => {
-
-};
-
 controller.updateState = async (req, res, next) => {
-
+  console.log('made it here!')
   try {
-    const dbResponse = await Recipe.find({});
+    const dbResponse = await Recipe.find();
     //grab 
     const count = await Recipe.countDocuments();
     res.locals.data = dbResponse;
