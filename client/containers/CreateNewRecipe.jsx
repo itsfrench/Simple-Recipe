@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState} from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addRecipe } from '../reducers/index.js';
 
 //component that returns the html for this page 
@@ -10,6 +10,24 @@ const RecipeCreator = () => {
 
   //function that creates the recipe object and dispatches it to a reducer function to update the state 
   const addRecipeFunc = () => {
+
+    const submitRecipe = async (recipe) => {
+      const options = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify({recipe: recipe}),
+        };
+      try {
+        const serverResponse = await fetch('http://localhost:3000/create-new-recipe', options);
+        const response = await serverResponse.json();
+        console.log('this is the server response: ', response);
+        return;
+      }
+      catch (err) {
+        console.log('this is the catch error: ', err);
+      // throw new Error(err.message);
+      }
+    }
     const formData = {};
 
     //grab all of the text from the form fields
@@ -31,11 +49,21 @@ const RecipeCreator = () => {
     for (const keys in formData) {
       if (formData[keys] === '') return 
     }
-    console.log(formData)
+    console.log('this is the form data: ', formData)
     dispatch(addRecipe(formData));
+    //here is where I need to make a POST reques to my DB
+
+    //subscribe to state to get the id 
+    // const recipeId = useSelector(state => state.lastRecipeId);
+    // formData.id = recipeId - 1;
+    submitRecipe(formData);
+
+    //set all of the form fields to empty
+    const firstIng = document.querySelector('.first-ingredient');
     formTitle.value = ''; 
     setIngredientsArray([]);
-    formIngredients.value = ''; 
+    // formIngredients.value = ''; 
+    firstIng.value = '';
     formInstructions.value = ''; 
   }
   //state variable for the additonal ingredient fields 
@@ -61,11 +89,12 @@ const RecipeCreator = () => {
             <option value="US Standard">US Standard</option>
           </select>  
         <label> Recipe Ingredients:</label>
-        <input id='form-ingredients' type='text' name='recipe-title' ></input>
+        <input id='form-ingredients' className='first-ingredient' type='text' name='recipe-title' ></input>
         {ingredientsArray}
         <button id='add-ingredients' onClick={addAnotherField}>Add an Ingredient</button>
         <label>Recipe Instructions:</label>
-        <input id='form-instructions' type='text' name='recipe-title' ></input> 
+        <textarea id='form-instructions' name='recipe-title'></textarea>
+        {/* <input  type='text'  ></input>  */}
         <button id='create-button' onClick={addRecipeFunc}>Add Recipe</button>
         </div>
     </div>

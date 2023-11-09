@@ -14,18 +14,25 @@ mongoose.connect(mongoURI);
 app.use(express.json());
 app.use(cors());
 
+//statically serving my images 
 const images = path.join(__dirname, '../client/assets');
 app.use('/assets', express.static(images));
 
+//servering my home page 
 const index = path.join(__dirname, '../client/index.js');
 app.get('/', (req, res) => res.sendFile(index) )
 
-
-app.use('/update-state', controller.updateState, (req, res) => {
+//handler to update state
+app.get('/update-state', controller.updateState, (req, res) => {
   const data = [res.locals.count, res.locals.data];
   console.log('here is the data from the DB!', data);
   res.status(200).json(data).end();
 });
+
+//handler to post a recipe
+app.use('/create-new-recipe', controller.createRecipe, (req, res) => {
+  res.sendStatus(200).end();
+})
 
 //global error handler function 
 const errorHandler = (err, req, res, next) => {
@@ -40,6 +47,7 @@ const errorHandler = (err, req, res, next) => {
 }
 
 app.use(errorHandler)
-app.listen(PORT);
 
+
+app.listen(PORT);
 module.exports = app;

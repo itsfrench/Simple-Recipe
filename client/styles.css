@@ -104,12 +104,18 @@ input {
   background-color: #F5F5DB;
   font-size: 2vw;
   text-align: center;
+  border-radius: 1vw;
 } 
 #form-instructions {
   margin-top: 1vw;
   width: 40vw;
   height: 20vw;
-  text-align: top;
+  text-align:justify;
+  vertical-align: top;
+  background-color: #F5F5DB;
+  font-size: 2vw;
+  border-radius: 1vw;
+  font-family: 'Inter', sans-serif;
 }
 #form-measurement {
   margin-top: 1vw;
@@ -119,6 +125,7 @@ input {
   background: #F5F5DB;
   font-size: 2vw;
   font-family: 'Inter', sans-serif;
+  border-radius: 1vw;
 }
 #add-ingredients {
   width: 15vw;
