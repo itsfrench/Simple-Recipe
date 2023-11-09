@@ -33,6 +33,10 @@ app.use('/create-new-recipe', controller.createRecipe, (req, res) => {
   res.sendStatus(200).end();
 })
 
+//handler to delete a recipe
+app.delete('/delete-recipe', controller.deleteRecipe, (req, res) => {
+  res.status(200).json(res.locals.response).end();
+})
 //global error handler function 
 const errorHandler = (err, req, res, next) => {
   const defaultError = {

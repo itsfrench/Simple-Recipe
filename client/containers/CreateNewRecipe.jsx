@@ -20,7 +20,6 @@ const RecipeCreator = () => {
       try {
         const serverResponse = await fetch('http://localhost:3000/create-new-recipe', options);
         const response = await serverResponse.json();
-        console.log('this is the server response: ', response);
         return;
       }
       catch (err) {

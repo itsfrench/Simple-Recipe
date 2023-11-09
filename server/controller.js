@@ -23,18 +23,7 @@ controller.updateState = async (req, res, next) => {
 
 controller.createRecipe = async (req, res, next) => {
 
-  console.log('this is the req body : ', req.body)
-  // console.log('this is the recipe : ', req.body.recipe)
-
   const recipe = req.body.recipe
-
-  // const recipe = {
-  //   title: title,
-  //   measurement: measurement,
-  //   ingredients: ingredients,
-  //   instructions: instructions,
-  // }
-  console.log('this is the recipe: ', recipe)
    try {
     const dbResponse = await Recipe.create(recipe);
     const response = dbResponse.toJSON();
@@ -50,4 +39,23 @@ controller.createRecipe = async (req, res, next) => {
     next(error);
    }
 };
+
+controller.deleteRecipe = async (req, res, next) => {
+  const { title } = req.body;
+  try{ 
+    const findRecipe = await Recipe.find({title});
+    console.log('this is what the DB found: ', findRecipe, findRecipe.id);
+    const dbResponse = await Recipe.deleteOne({id: findRecipe.id});
+    res.locals.response = dbResponse;
+    next()
+  }
+  catch (err) {
+    const error = {
+      log: 'controller.deleteRecipe',
+      status: 404,
+      message: { err: err.message}
+    }
+    next(error);
+  }
+}
 module.exports = controller;

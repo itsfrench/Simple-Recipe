@@ -21,7 +21,7 @@ const RecipeContainer = () => {
         }
         const response = await getData.json();
         //create a payload object to dispatch to a reducer function to update the state
-        console.log('this is the server response: ', response);
+        
         const count = response[0];
         const array = response[1];
         

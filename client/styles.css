@@ -31,12 +31,23 @@ h1{
   justify-content: center;
   width: auto;
   max-width: 100%;
-  max-height: 150px;
+  max-height: 300px;
   height: auto;
   margin: 0 auto;
   display: block;
 }
-
+#knife {
+  position: fixed;
+  bottom: 20px;
+  right: 20px; 
+  width: auto;
+  max-width: 100%;
+  max-height: 70px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  
+}
 h3 {
   display: flex;
   justify-content: center;
@@ -184,11 +195,12 @@ p {
 #text-instructions {
   display: flex;
   justify-content: center;
-  width: 48vw;
+  width: 30vw;
   margin-bottom: 3vw;
   align-content: center;
   font-size: 1.75vw;
   font-family: 'Inter', sans-serif;
+  color: #F5F5DB;
 }
 #recipe-buttons {
   margin-bottom: 1vw;
@@ -197,3 +209,9 @@ p {
   height: 5vw;
   font-size: 2vw;
 } 
+li {
+  font-size: 1.75vw;
+  font-family: 'Inter', sans-serif;
+  color: #F5F5DB;
+  margin: .75vw;
+}
