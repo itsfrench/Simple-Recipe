@@ -35,7 +35,7 @@ const RecipeCards = () => {
         const count = updateResponse[0];
         const array = updateResponse[1];
         
-        dispatch(updateAllState({ count, array} ));
+        dispatch(updateAllState({ count, array } ));
 
       return;
     }
@@ -65,8 +65,8 @@ const RecipeCards = () => {
           
           <h2>Instructions: </h2>
           <p id='text-instructions'>{allRecipes[i].instructions}</p>
-          <button id='recipe-buttons' className={allRecipes[i].title} onClick={deleteThisRecipe}>Delete</button>
-          <button id='recipe-buttons' className={allRecipes[i].title}>Edit Recipe</button>
+          <button id='recipe-button-delete' className={allRecipes[i].title} onClick={deleteThisRecipe}>Delete</button>
+          <button id='recipe-button-update' className={allRecipes[i].title}>Edit Recipe</button>
           </div>
       
     )

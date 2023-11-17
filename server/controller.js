@@ -43,9 +43,9 @@ controller.createRecipe = async (req, res, next) => {
 controller.deleteRecipe = async (req, res, next) => {
   const { title } = req.body;
   try{ 
-    const findRecipe = await Recipe.find({title});
-    console.log('this is what the DB found: ', findRecipe, findRecipe.id);
-    const dbResponse = await Recipe.deleteOne({id: findRecipe.id});
+    // const findRecipe = await Recipe.find({title});
+    // console.log('this is what the DB found: ', findRecipe, findRecipe.id);
+    const dbResponse = await Recipe.deleteOne({title});
     res.locals.response = dbResponse;
     next()
   }

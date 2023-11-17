@@ -202,12 +202,20 @@ p {
   font-family: 'Inter', sans-serif;
   color: #F5F5DB;
 }
-#recipe-buttons {
+#recipe-button-update {
   margin-bottom: 1vw;
   margin-top: 1vw;
   width: 18vw;
   height: 5vw;
   font-size: 2vw;
+} 
+#recipe-button-delete {
+  margin-bottom: 1vw;
+  margin-top: 1vw;
+  width: 18vw;
+  height: 5vw;
+  font-size: 2vw;
+  background-color: rgb(132, 44, 9);
 } 
 li {
   font-size: 1.75vw;

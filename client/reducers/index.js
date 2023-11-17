@@ -1,7 +1,6 @@
 import { createSlice, current } from '@reduxjs/toolkit';
 
 export const recipeSlice = createSlice({
-
   //query here, if empty do the rest of the code below:
   name: 'recipes',
   initialState: {
